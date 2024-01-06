@@ -2,38 +2,50 @@
  * YOUR CODE HERE *
  ******************/
 function xify(str) {
-  return str.replace(/[a-zA-Z ]/g, "x")
+  // return str.replace(/[a-zA-Z ]/g, "x")
+  var result = ""
+  for(var i = 0; i < str.length; i++){
+    result += "x"
+  }
+  return result
 }
 function yellingChars(str){
-  return str.split("").map(char => char + "!").join("");
+  // return str.split("").map(char => char + "!").join("");
+  var newStr = ""
+  for (let i = 0; i < str.length; i++){
+    newStr += str[i] + "!"
+  }
+  return newStr
 }
 function indexedChars(str){
-  const newStr = [];
-  for (let i = 0; i < str.length; i++) {
-  newStr.push(i + str[i]);
+//   const newStr = [];
+//   for (let i = 0; i < str.length; i++) {
+//   newStr.push(i + str[i])
+// }
+//   return newStr.join('')
+const newStr = []
+for (let i = 0; i < str.length; i++) {
+  newStr += str.indexOf() + str[i]
 }
-  return newStr.join('');
+return newStr
 }
 function numberedChars(str) {
-  const charCount = {};
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (charCount[char]) {
-      charCount[char]++;
-    } else {
-      charCount[char] = 1;
-    }
-
-    const prevChar = str[i - 1];
-    if (prevChar) {
-      charCount[prevChar] += charCount[char];
-    }
-  }
-
-  return charCount;
+  // const chars = str.split("")
+  // for(let i = 0; 1 < chars.length; i++){
+  // }
+  //   return "(" + chars.indexOf() + ")" + chars 
 }
 function exclaim(str) {
-  return str.replace(/[!?.]/g, '!');
+  // return str.replace(/[!?.]/g, '!');
+  let result = ""
+  for (let i = 0; i < str.length; i++){
+    if (str[i] === "." || str[i] === "?"){
+    result += "!"
+  } else {
+    result += str[i]
+  }
+}
+    return result
 }
 function repeatIt(str, n){
   let repeatedStr = ""
@@ -43,26 +55,44 @@ function repeatIt(str, n){
   return repeatedStr
 }
 function truncate(str){
-  if(str.length <= 18){
+  // if(str.length <= 18){
+  //   return str
+  // }else{
+  // }
+  // return str.slice(0, 15) + "..."
+  if (str.length <= 18){
     return str
-  }else{
-
+     }else{
+    return str.substring(0, 15) + "..."
   }
-  return str.slice(0, 15) + "..."
 }
-function emailify(str){
-  const fullName = str.split(" ")
-  return `${fullName[0][0]}${fullName[1]}.prsvr@gmail.com`.toLowerCase()
+function emailify(str1, str2){
+  // const fullName = str.split(" ")
+  // return `${fullName[0][0]}${fullName[1]}.prsvr@gmail.com`.toLowerCase()
+return str1[0][0] + str2[0] + "prsvr@gmail.com"
 }
 function reverse(str){
-  const rArr = str.split("")
-  rArr.reverse()
-  const rStr =rArr.join("")
+  // const rArr = str.split("")
+  // rArr.reverse()
+  // const rStr =rArr.join("")
+  // return rStr
+  let rStr = ""
+  for (let i = str.length - 1; i >= 0; i--){
+    rStr += str[i]
+  }
   return rStr
 }
 function onlyVowels(str){
-  const vowels = /[aeiouAEIOU]/gi
-  return str.match(vowels).join("")
+  // const vowels = /[aeiouAEIOU]/gi
+  // return str.match(vowels).join("")
+  const vowels = 'aeiouAEIOU';
+  let result = '';
+  for (let i = 0; i < str.length; i++){
+    if (vowels.includes(str[i])){
+      result += str[i]
+    }
+  }
+  return result
 }
 function crazyCase(str) {
   return str.split("").map((char, index) => index % 2 === 0 ? char.toLowerCase() : char.toUpperCase()).join("");
@@ -84,12 +114,12 @@ function crazyCase2ReturnOfCrazyCase(str) {
   let crazyStr = "";
   for (let i = 0; i < str.length; i++) {
         if (str[i] !== " ") {
-      crazyStr += str[i];
+      crazyStr += str[i]
     }
   }
-    crazyStr = crazyStr.map((char, index) => {
+    crazyStr = crazyStr.split("").map((char, index) => {
     return index % 2 === 0 ? char.toLowerCase() : char.toUpperCase();
-  }).join("");
+  }).join("")
   return crazyStr;
 }
 
