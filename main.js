@@ -11,11 +11,11 @@ function xify(str) {
 }
 function yellingChars(str){
   // return str.split("").map(char => char + "!").join("");
-  var newStr = ""
+  var result = ""
   for (let i = 0; i < str.length; i++){
-    newStr += str[i] + "!"
+    result += str[i] + "!"
   }
-  return newStr
+  return result
 }
 function indexedChars(str){
 //   const newStr = [];
@@ -23,17 +23,22 @@ function indexedChars(str){
 //   newStr.push(i + str[i])
 // }
 //   return newStr.join('')
-const newStr = []
+const newStr = "";
 for (let i = 0; i < str.length; i++) {
-  newStr += str.indexOf() + str[i]
+  newStr += i + str[i];
 }
-return newStr
+return newStr;
 }
 function numberedChars(str) {
   // const chars = str.split("")
   // for(let i = 0; 1 < chars.length; i++){
   // }
   //   return "(" + chars.indexOf() + ")" + chars 
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    result += "(" + (i + 1) + ")" + str[i];
+  }
+  return result;
 }
 function exclaim(str) {
   // return str.replace(/[!?.]/g, '!');
