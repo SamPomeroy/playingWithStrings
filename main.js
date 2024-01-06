@@ -70,10 +70,16 @@ function truncate(str){
   }
 }
 function emailify(str){
-  const fullName = str.split(" ")
-  return `${fullName[0][0]}${fullName[1]}.prsvr@gmail.com`.toLowerCase()
-// return str1[0][0] + str2[0] + "prsvr@gmail.com"
+  // const fullName = str.split(" ")
+  // return `${fullName[0][0]}${fullName[1]}.prsvr@gmail.com`.toLowerCase()
+const afterSpace = str.indexOf(" ");
+
+// if (afterSpace === -1){
+//   return str[0]
+// }
+return str[0] + str[afterSpace + 1] + ".prsvr@gmail.com"
 }
+
 function reverse(str){
   // const rArr = str.split("")
   // rArr.reverse()
