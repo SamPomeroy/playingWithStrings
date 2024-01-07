@@ -72,12 +72,24 @@ function truncate(str){
 function emailify(str){
   // const fullName = str.split(" ")
   // return `${fullName[0][0]}${fullName[1]}.prsvr@gmail.com`.toLowerCase()
-const afterSpace = str.indexOf(" ");
-
-// if (afterSpace === -1){
-//   return str[0]
-// }
-return str[0] + str[afterSpace + 1] + ".prsvr@gmail.com"
+  str = str.toLowerCase();
+  let space = str.indexOf(" ");
+  if (space === -1) {
+    return str[0];
+  }
+  let emailAdd = "";
+  for (let i = 0; i < space; i++) {
+  if (i === 0) {
+      emailAdd += str[i];
+    }
+  }
+  for (let i = space; i < str.length; i++) {
+  if (str[i] !== " ") {
+      emailAdd += str[i];
+    }
+  }
+  emailAdd += ".prsvr@gmail.com";
+  return emailAdd;
 }
 
 function reverse(str){
