@@ -2,7 +2,7 @@
  * YOUR CODE HERE *
  ******************/
 //CCR2CC w methods fails 1
-//emailify w methods passes
+
 function xify(str) {
   // return str.replace(/[a-zA-Z ]/g, "x")
   var result = ""
